@@ -5,6 +5,11 @@ const shedule = require('node-schedule');
 const { JSDOM } = require('jsdom');
 const TelegramBot = require('node-telegram-bot-api');
 
+const hussein = '245853116';
+const saleh = '312877637'
+const deaa = '496497144'
+
+const users = [hussein, saleh, deaa]
 const app = express()
 
 app.use(
@@ -38,13 +43,15 @@ const sendToTelegram = async ()=>{
     if(ver == 'النسخة 1.7' ){
         console.log("same")
     }else{
-        bot.sendMessage('245853116', "🔴🔴🔴 إصدااار جدييد 🔴🔴🔴" , { parse_mode: 'HTML' })
+	    users.forEach(user => {
+        bot.sendMessage(user, "🔴🔴🔴 إصدااار جدييد 🔴🔴🔴" , { parse_mode: 'HTML' })
         			.then(() => {
         				console.log('Message sent successfully');
         			})
         			.catch((error) => {
         				console.error(error);
         			});
+		    });
     }
 }
 
