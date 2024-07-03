@@ -58,5 +58,12 @@ const sendToTelegram = async ()=>{
 
 
 shedule.scheduleJob("* * * * *", function () {
+	 bot.sendMessage(hussein, "🔴🔴🔴 test test 🔴🔴🔴" , { parse_mode: 'HTML' })
+        			.then(() => {
+        				console.log('Message sent successfully');
+        			})
+        			.catch((error) => {
+        				console.error(error);
+        			});
     sendToTelegram()
     })
